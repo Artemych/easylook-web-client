@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Test page</title>
+    <script src="js/lib/require.js"></script>
+    <script>
+        require(['js/main'], function (common) {
+            require(['main/map']);
+        });
+    </script>
+</head>
+<body>
+<div id="container" class="map"></div>
+</body>
+</html>
