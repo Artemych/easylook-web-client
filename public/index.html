@@ -1,15 +1,26 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <title>Test page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Карта</title>
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,700,400,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href="/css/map.css" rel="stylesheet" type="text/css"/>
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="js/lib/require.js"></script>
     <script>
-        require(['js/main'], function (common) {
-            require(['main/map']);
+        ymaps.ready(function () {
+            require(['js/main'], function () {
+                require(['main/map']);
+            });
         });
     </script>
 </head>
 <body>
-<div id="container" class="map"></div>
+    <div class="header"></div>
+    <div class="second-header"></div>
+    <div id="map"></div>
+    <div class="footer"></div>
 </body>
 </html>

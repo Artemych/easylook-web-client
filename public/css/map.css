@@ -1,0 +1,704 @@
+@font-face {
+  font-family: "MetaBoldC";
+  src: url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.eot) format('embedded-opentype'), url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.svg) format('svg'), url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.ttf) format('truetype'), url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.woff) format('woff');
+}
+@font-face {
+  font-family: "Tahoma";
+  src: url(/fonts/tahoma.ttf) format('truetype');
+}
+/* line 7, ../scss/map.scss */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 16, ../scss/map.scss */
+.header, .footer {
+  background-color: #000000;
+  height: 36px;
+  z-index: 3000;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+/* line 27, ../scss/map.scss */
+.min-logo, .refresh, .print-screen {
+  display: inline-block;
+  margin: 0 10px;
+  height: 32px;
+  width: 26px;
+  cursor: pointer;
+}
+
+/* line 42, ../scss/map.scss */
+.header {
+  top: 0;
+}
+/* line 45, ../scss/map.scss */
+.header .phone {
+  background-image: url("/images/ico_phone.png");
+  background-position: 2px 9px;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  float: left;
+  font-family: Open Sans, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  height: 37px;
+  line-height: 37px;
+  padding-left: 20px;
+  padding-top: 0;
+  width: 180px;
+}
+/* line 60, ../scss/map.scss */
+.header .logo {
+  height: 65px;
+  margin: 0 auto -65px;
+  width: 192px;
+}
+/* line 64, ../scss/map.scss */
+.header .logo a {
+  background-image: url("/images/logo.png");
+  background-position: 0 -5px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 65px;
+  width: 192px;
+}
+/* line 71, ../scss/map.scss */
+.header .logo a:hover {
+  background-position: 0 -94px;
+}
+/* line 76, ../scss/map.scss */
+.header .enter {
+  color: #ffffff;
+  float: right;
+  font-family: MetaBoldC;
+  line-height: 37px;
+  text-align: right;
+  width: 380px;
+}
+/* line 83, ../scss/map.scss */
+.header .enter a {
+  border-bottom: 1px dotted #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+/* line 89, ../scss/map.scss */
+.header .enter a.logout {
+  border-bottom: 1px dotted #939598;
+  color: #939598;
+  cursor: pointer;
+  font-size: 10px;
+  font-style: italic;
+  height: 12px;
+  padding-bottom: 1px;
+  text-decoration: none;
+}
+/* line 100, ../scss/map.scss */
+.header .enter div.logout {
+  background-image: url("/images/ico_exit.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  display: inline;
+  font-size: 10px;
+  height: 12px;
+  padding: 1px 4px 1px 14px;
+}
+/* line 110, ../scss/map.scss */
+.header .wrapper {
+  min-height: 36px;
+  height: 36px;
+}
+
+/* line 115, ../scss/map.scss */
+.footer {
+  bottom: 0;
+  padding-top: 4px;
+}
+/* line 119, ../scss/map.scss */
+.footer span {
+  cursor: pointer;
+}
+
+/* line 123, ../scss/map.scss */
+.wrapper {
+  height: auto;
+  margin: 0 auto;
+  min-height: 100%;
+  width: 1020px;
+}
+
+/* line 129, ../scss/map.scss */
+#map {
+  position: absolute;
+  top: 36px;
+  bottom: 36px;
+  left: 0;
+  right: 0;
+}
+
+/* line 136, ../scss/map.scss */
+.trackers-wrapper {
+  font-family: MetaBoldC;
+  bottom: 40px;
+  height: 40px;
+  left: 0;
+  margin: auto;
+  position: fixed;
+  right: 0;
+  width: 1020px;
+}
+
+/* line 146, ../scss/map.scss */
+.tracker-block {
+  display: inline-block;
+  width: 245px;
+  background-color: #ffffff;
+  padding: 3px;
+  height: 250px;
+  transform: translate(0, 0);
+  transition-duration: 0.3s;
+}
+/* line 154, ../scss/map.scss */
+.tracker-block.active {
+  transform: translate(0px, -215px);
+  transition-duration: 0.3s;
+}
+/* line 157, ../scss/map.scss */
+.tracker-block.active .tracker-block-title:after {
+  position: absolute;
+  top: 12px;
+  content: '';
+  width: 12px;
+  height: 8px;
+  right: 10px;
+  background: url("/images/white_arrow.png");
+  transform: rotate(0deg);
+}
+
+/* line 169, ../scss/map.scss */
+.tracker-block-title {
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: MetaBoldC;
+  font-size: 15px;
+  height: 35px;
+  line-height: 35px;
+  padding-left: 10px;
+  text-transform: uppercase;
+  width: auto;
+  position: relative;
+}
+/* line 181, ../scss/map.scss */
+.tracker-block-title:after {
+  position: absolute;
+  top: 12px;
+  content: '';
+  width: 12px;
+  height: 8px;
+  right: 10px;
+  background: url("/images/white_arrow.png");
+  transform: rotate(180deg);
+}
+
+/* line 192, ../scss/map.scss */
+.tracker-block-content {
+  width: 100%;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+
+/* line 197, ../scss/map.scss */
+.tracker-group-title {
+  background-color: #E0DBD5;
+  width: auto;
+  color: #000000;
+  font-size: 13px;
+  padding-left: 10px;
+  height: 35px;
+  line-height: 35px;
+  margin-top: 3px;
+  position: relative;
+  cursor: pointer;
+}
+/* line 208, ../scss/map.scss */
+.tracker-group-title:after {
+  position: absolute;
+  top: 12px;
+  content: '';
+  width: 12px;
+  height: 8px;
+  right: 10px;
+  background: url("/images/arrow.png");
+}
+/* line 218, ../scss/map.scss */
+.tracker-group-title.active:after {
+  position: absolute;
+  top: 12px;
+  content: '';
+  width: 12px;
+  height: 8px;
+  right: 10px;
+  display: inline-block;
+  background: url("/images/arrow.png");
+  transform: rotate(180deg);
+}
+/* line 229, ../scss/map.scss */
+.tracker-group-title.active + div {
+  display: block;
+}
+/* line 233, ../scss/map.scss */
+.tracker-group-title + div {
+  display: none;
+}
+
+/* line 237, ../scss/map.scss */
+.tracker {
+  padding: 10px;
+}
+
+/* line 240, ../scss/map.scss */
+.tracker-title {
+  display: inline-block;
+  font-family: Tahoma;
+  font-size: 11px;
+}
+
+/* line 245, ../scss/map.scss */
+.tracker-icon {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  margin-bottom: -2px;
+}
+/* line 250, ../scss/map.scss */
+.tracker-icon.map-icon {
+  left: -10px;
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  background-position: center;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+/* line 263, ../scss/map.scss */
+.tracker-icon.edit {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+/* line 271, ../scss/map.scss */
+.tracker-icon-signal {
+  display: inline-block;
+  width: 19px;
+  height: 16px;
+  float: right;
+  background: url("/images/signal.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 5px;
+}
+
+/* line 281, ../scss/map.scss */
+.tracker-icon-compass {
+  display: inline-block;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  float: right;
+  background: url("/images/compass.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 5px;
+}
+/* line 291, ../scss/map.scss */
+.tracker-icon-compass:hover {
+  background: url("/images/compas_hover.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 296, ../scss/map.scss */
+.tracker-icon-compass.active {
+  background: url("/images/compas_hover.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 302, ../scss/map.scss */
+.tracker-icon-eye {
+  display: inline-block;
+  width: 17px;
+  height: 16px;
+  float: right;
+  background: url("/images/eye.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 5px;
+}
+/* line 311, ../scss/map.scss */
+.tracker-icon-eye:hover {
+  cursor: pointer;
+  width: 17px;
+  height: 16px;
+  float: right;
+  background: url("/images/eye_hover.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 5px;
+}
+/* line 321, ../scss/map.scss */
+.tracker-icon-eye.active {
+  background: url("/images/eye_hover.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 5px;
+}
+
+/* line 328, ../scss/map.scss */
+.min-logo {
+  background: url("/images/kap.png") no-repeat scroll transparent;
+  background-position: center;
+}
+
+/* line 333, ../scss/map.scss */
+.refresh {
+  background: url("/images/refresh.png") no-repeat scroll transparent;
+  background-position: center;
+}
+
+/* line 338, ../scss/map.scss */
+.print-screen {
+  background: url("/images/print-screen.png") no-repeat scroll transparent;
+  background-position: center;
+}
+
+/* line 343, ../scss/map.scss */
+.second-header {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  height: 38px;
+  z-index: 2500;
+}
+/* line 350, ../scss/map.scss */
+.second-header .top-bar-link {
+  color: #000000;
+  display: inline-block;
+  font-family: MetaBoldC;
+  position: relative;
+  font-size: 15px;
+}
+/* line 357, ../scss/map.scss */
+.second-header a {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 30px;
+}
+
+/* line 364, ../scss/map.scss */
+.left-strip {
+  width: calc(50% - 96px);
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  float: left;
+  text-align: right;
+  line-height: 38px;
+}
+
+/* line 372, ../scss/map.scss */
+.right-strip {
+  width: calc(50% - 96px);
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  text-align: left;
+  line-height: 38px;
+}
+
+/* line 380, ../scss/map.scss */
+.center-strip {
+  position: relative;
+  text-align: center;
+  float: left;
+  width: 192px;
+  height: 67px;
+  background: url("/images/top_background.png") no-repeat scroll transparent;
+}
+/* line 387, ../scss/map.scss */
+.center-strip > a {
+  bottom: 12px;
+  left: 58px;
+  position: absolute;
+}
+/* line 391, ../scss/map.scss */
+.center-strip > a .top-bar-link {
+  color: #e81315;
+}
+/* line 393, ../scss/map.scss */
+.center-strip > a .top-bar-link:hover {
+  color: #e81315;
+}
+
+/* line 400, ../scss/map.scss */
+.top-bar-link:hover {
+  color: #e81315;
+}
+/* line 403, ../scss/map.scss */
+.top-bar-link.about:before {
+  background-image: url("/images/logo.png");
+  background-position: 0 -48px;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  content: "";
+  height: 24px;
+  left: -25px;
+  position: absolute;
+  top: 5px;
+  width: 20px;
+}
+/* line 415, ../scss/map.scss */
+.top-bar-link.help:before {
+  background-image: url("/images/help.png");
+  background-position: 0 -48px;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  content: "";
+  height: 24px;
+  left: -30px;
+  position: absolute;
+  top: 5px;
+  width: 24px;
+}
+/* line 427, ../scss/map.scss */
+.top-bar-link.map:before {
+  background-image: url("/images/map.png");
+  background-position: 0 -25px;
+  background-repeat: no-repeat;
+  background-size: 25px auto;
+  content: "";
+  height: 25px;
+  left: -30px;
+  position: absolute;
+  top: -7px;
+  width: 25px;
+}
+/* line 439, ../scss/map.scss */
+.top-bar-link.shop:before {
+  background-image: url("/images/buscket.png");
+  background-position: 0 -44px;
+  background-repeat: no-repeat;
+  background-size: 25px auto;
+  content: "";
+  height: 22px;
+  left: -30px;
+  position: absolute;
+  top: 6px;
+  width: 25px;
+}
+/* line 451, ../scss/map.scss */
+.top-bar-link.cost:before {
+  background-image: url("/images/walet.png");
+  background-position: 0 -40px;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  content: "";
+  height: 20px;
+  left: -25px;
+  position: absolute;
+  top: 7px;
+  width: 20px;
+}
+/* line 463, ../scss/map.scss */
+.top-bar-link.about:hover:before {
+  background-image: url("/images/logo.png");
+  background-position: 0 -24px;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  content: "";
+  height: 24px;
+  left: -25px;
+  position: absolute;
+  top: 5px;
+  width: 20px;
+}
+/* line 475, ../scss/map.scss */
+.top-bar-link.help:hover:before {
+  background-image: url("/images/help.png");
+  background-position: 0 2px;
+  background-repeat: no-repeat;
+  background-size: 24px auto;
+  content: "";
+  height: 24px;
+  left: -30px;
+  position: absolute;
+  top: 5px;
+  width: 24px;
+}
+/* line 487, ../scss/map.scss */
+.top-bar-link.map:hover:before {
+  background-image: url("/images/map.png");
+  background-position: 0 -25px;
+  background-repeat: no-repeat;
+  background-size: 25px auto;
+  content: "";
+  height: 25px;
+  left: -30px;
+  position: absolute;
+  top: -7px;
+  width: 25px;
+}
+/* line 499, ../scss/map.scss */
+.top-bar-link.shop:hover:before {
+  background-image: url("/images/buscket.png");
+  background-position: 0 -1px;
+  background-repeat: no-repeat;
+  background-size: 25px auto;
+  content: "";
+  height: 21px;
+  left: -30px;
+  position: absolute;
+  top: 6px;
+  width: 25px;
+}
+/* line 511, ../scss/map.scss */
+.top-bar-link.cost:hover:before {
+  background-image: url("/images/walet.png");
+  background-position: 0 -20px;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  content: "";
+  height: 20px;
+  left: -25px;
+  position: absolute;
+  top: 7px;
+  width: 20px;
+}
+
+/* line 524, ../scss/map.scss */
+.tracker-info-row {
+  font-family: Tahoma;
+  font-size: 11px;
+  height: 25px;
+  line-height: 25px;
+}
+/* line 529, ../scss/map.scss */
+.tracker-info-row .bold {
+  display: inline-block;
+  font-family: Tahoma;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* line 536, ../scss/map.scss */
+.tracker-icons {
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+}
+
+/* line 541, ../scss/map.scss */
+.tracker-info {
+  padding: 0 10px;
+}
+
+/* line 544, ../scss/map.scss */
+.period-row {
+  padding: 5px 0;
+}
+/* line 546, ../scss/map.scss */
+.period-row .right-column {
+  display: inline-block;
+  line-height: 10px;
+  width: 70%;
+}
+/* line 551, ../scss/map.scss */
+.period-row .left-column {
+  float: left;
+  font-size: 11px;
+  font-weight: bold;
+  height: 30px;
+  padding-right: 3px;
+  padding-top: 3px;
+  text-align: right;
+  width: 28%;
+}
+
+/* line 562, ../scss/map.scss */
+.input-label {
+  color: grey;
+  font-family: Verdana;
+  font-size: 8px;
+  line-height: 8px;
+  text-align: center;
+}
+
+/* line 569, ../scss/map.scss */
+.divider {
+  display: inline-block;
+  width: 10px;
+}
+
+/* line 573, ../scss/map.scss */
+.history-link {
+  border-bottom: 2px dotted #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Tahoma;
+  font-size: 11px;
+  line-height: 15px;
+  margin-left: 5px;
+}
+/* line 581, ../scss/map.scss */
+.history-link:hover {
+  color: #e81315;
+  border-bottom: 2px dotted #e81315;
+}
+
+/* line 586, ../scss/map.scss */
+.input-wrapper {
+  display: inline-block;
+  text-align: center;
+  width: 25px;
+}
+
+/* line 591, ../scss/map.scss */
+.hide {
+  display: none;
+}
+
+/* line 594, ../scss/map.scss */
+.right-column input {
+  border: 1px solid #e0dbd5;
+  border-radius: 0;
+  display: inline-block;
+  font-family: Tahoma;
+  font-size: 12px;
+  width: 20px;
+}
+
+/* line 602, ../scss/map.scss */
+.tracker-icon.edit.selected:after {
+  content: '';
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+}

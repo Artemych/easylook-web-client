@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "MetaBoldC";
+  src: url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.eot) format('embedded-opentype'), url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.svg) format('svg'), url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.ttf) format('truetype'), url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.woff) format('woff');
+}
+@font-face {
+  font-family: "Tahoma";
+  src: url(/fonts/tahoma.ttf) format('truetype');
+}

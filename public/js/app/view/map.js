@@ -1,18 +1,19 @@
 define([
     'lib/jquery',
     'lib/handlebars',
-    'app/view/base',
-    'text!app/template/map/index.html'
-], function ($, Handlebars, BaseView, mapTemplate) {
+    'app/view/base'
+], function ($, Handlebars, BaseView) {
     return BaseView.extend({
-        el: '#container',
+        initialize: function () {
+            var that = this;
+            BaseView.prototype.initialize.apply(that, arguments);
+            var map = new ymaps.Map("map", {
+                center: [55.753559, 37.609218 ], // москва
+                zoom: 12,
+                controls: ["zoomControl"]
+            });
 
-        template: Handlebars.compile(mapTemplate),
-
-        templateData: function () {
-            return {
-                test: 'test string'
-            }
+            that.viewModel.set('map', map);
         }
     });
 });

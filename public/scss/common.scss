@@ -1,0 +1,50 @@
+// Compass helpers
+@import "compass/utilities";
+@import "compass/css3";
+
+//app fonts
+@include font-face("MetaBoldC", font-files(
+                "/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.eot",
+                "/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.svg",
+                "/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.ttf",
+                "/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.woff"
+));
+
+@include font-face("Tahoma", font-files("/fonts/tahoma.ttf"));
+
+//colors
+$black: #000000;
+$white: #ffffff;
+$color_mountain_mist_approx: #939598;
+$color_westar_approx: #e0dbd5;
+$white_80: rgba(255,255,255,0.8);
+$color_scarlet_approx: #e81315;
+$gray: grey;
+$black_20: rgba(0,0,0, 0.2);
+
+//fonts
+$font_0: Open Sans;
+$font_1: sans-serif;
+$font_2: MetaBoldC;
+$font_3: Tahoma;
+$font_4: Verdana;
+
+//urls
+$url_0: url("/images/ico_phone.png");
+$url_1: url("/images/logo.png");
+$url_2: url("/images/ico_exit.png");
+$url_3: url("/images/white_arrow.png");
+$url_4: url("/images/arrow.png");
+$url_5: url("/images/signal.png");
+$url_6: url("/images/compass.png");
+$url_7: url("/images/eye.png");
+$url_8: url("/images/eye_hover.png");
+$url_9: url("/images/compas_hover.png");
+$url_10: url("/images/kap.png");
+$url_11: url("/images/refresh.png");
+$url_12: url("/images/print-screen.png");
+$url_13: url("/images/top_background.png");
+$url_14: url("/images/help.png");
+$url_15: url("/images/map.png");
+$url_16: url("/images/buscket.png");
+$url_17: url("/images/walet.png");
