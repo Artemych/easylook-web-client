@@ -9,7 +9,10 @@ define([
         relations: [{
             type: Backbone.HasMany,
             key: 'trackers',
-            relatedModel: Tracker
+            relatedModel: Tracker,
+            reverseRelation: {
+                key: 'group'
+            }
         }]
     });
 });

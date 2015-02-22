@@ -9,7 +9,8 @@ define([
         template: Handlebars.compile(tracker),
 
         events: {
-            'click .tracker-icon-eye': 'togglePlaceMark'
+            'click .tracker-icon-eye': 'togglePlaceMark',
+            'click .tracker-icon-compass': 'setCurrentTracker'
         },
 
         togglePlaceMark: function (e) {
@@ -20,6 +21,19 @@ define([
              var placeMark = $('.map-icon[data-id=' + dataId +']');
              placeMark.toggleClass('hide', !placeMark.hasClass('hide'));
              */
+        },
+
+        setCurrentTracker: function (e) {
+            var $clickedEl = $(e.target),
+                isActive = $clickedEl.hasClass('active');
+            this.$('.tracker-icon-compass').removeClass('active');
+
+            if (isActive) {
+                this.viewModel.unset('currentTracker');
+            } else {
+                $clickedEl.addClass('active');
+                this.viewModel.set('currentTracker', this.model);
+            }
         }
     });
 });

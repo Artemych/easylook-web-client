@@ -25,7 +25,8 @@ require([
 
     $.when(
         mapViewModel.get('promises').groups,
-        mapViewModel.get('promises').icons
+        mapViewModel.get('promises').icons,
+        mapViewModel.get('promises').periodic
     ).done(function() {
             new TrackerWrapperView({
                 viewModel: mapViewModel

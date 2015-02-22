@@ -2,12 +2,14 @@ define([
     'lib/underscore',
     'app/view-model/base',
     'app/collection/map/groups',
-    'app/collection/map/icons'
-], function (_, BaseViewModel, Groups, Icons) {
+    'app/collection/map/icons',
+    'app/collection/map/periodic'
+], function (_, BaseViewModel, Groups, Icons, Periodic) {
     return BaseViewModel.extend({
         defaults: {
             groups: new Groups(),
-            icons: new Icons()
+            icons: new Icons(),
+            periodic: new Periodic()
         },
 
         initialize: function() {
@@ -18,7 +20,8 @@ define([
 
             promises = {
                 groups: that.get('groups').fetch(),
-                icons: that.get('icons').fetch()
+                icons: that.get('icons').fetch(),
+                periodic: that.get('periodic').fetch()
             };
 
             that.set('promises', promises);

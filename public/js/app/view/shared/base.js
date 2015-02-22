@@ -63,6 +63,23 @@ define([
             if (!(name in Handlebars.partials)) {
                 Handlebars.registerPartial(name, template);
             }
+        },
+
+        getDateObject: function(timestamp) {
+            var date = new Date(timestamp);
+            var day = date.getDate();
+            var month = date.getMonth();
+            var year = "0" + date.getYear();
+            var hours = date.getHours();
+            var minutes = "0" + date.getMinutes();
+
+            return {
+                'day': day,
+                'month': month + 1,
+                'year': year.substr(year.length-2),
+                'min': minutes.substr(minutes.length-2),
+                'hours': hours
+            };
         }
     });
 });
