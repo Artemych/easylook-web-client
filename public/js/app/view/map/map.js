@@ -11,12 +11,13 @@ define([
             (function fetchPeriodic () {
                 window.setTimeout(function () {
                     that.viewModel.get('periodic').fetch({
-                       success: fetchPeriodic
+                       success: function() {
+                           that.setCurrentTrackerData();
+                           fetchPeriodic();
+                       }
                     });
                 }, 30000);
             })();
-
-            that.listenTo(that.viewModel, 'sync:periodic', that.setCurrentTrackerData);
 
             var map = new ymaps.Map("map", {
                 center: [55.753559, 37.609218 ], // москва
@@ -29,6 +30,7 @@ define([
 
         setCurrentTrackerData: function () {
             var currentTracker = this.viewModel.get('currentTracker');
+            this.viewModel.unset('currentTrackerData');
 
             if (!currentTracker) {
                 return;

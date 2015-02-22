@@ -15,8 +15,6 @@ define([
             _.each(that.models, function (item) {
                 that.trackerMap[item.get('tracker_id')] = item;
             });
-
-            console.log(that.trackerMap);
         },
 
         parse: function (data) {

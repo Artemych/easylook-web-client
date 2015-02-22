@@ -33,6 +33,10 @@ define([
         updateTrackerInfo: function () {
             var currentTrackerData = this.viewModel.get('currentTrackerData');
 
+            if (!currentTrackerData) {
+                return;
+            }
+
             this.$('.tracker-info-lat').html(currentTrackerData.get('lat'));
             this.$('.tracker-info-lng').html(currentTrackerData.get('lng'));
             this.$('.tracker-info-speed').html(currentTrackerData.get('speed'));
