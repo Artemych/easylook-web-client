@@ -2,13 +2,25 @@ define([
     'lib/jquery',
     'lib/underscore',
     'lib/backbone',
-    'lib/handlebars'
+    'lib/handlebars',
+    'lib/backbone-babysitter-propagandist'
 ], function ($, _, Backbone, Handlebars) {
     return Backbone.View.extend({
+
+        propagandUpdate: function () {
+            var args = _.toArray(arguments);
+            args.unshift('render');
+            this.trigger.apply(this, args);
+        },
 
         constructor: function (options) {
             options = options || {};
             this.viewModel = options.viewModel;
+
+            this.childViews = new Backbone.TattletaleContainer();
+
+            this.childViews.on('render', _.bind(this.propagandUpdate, this));
+
             return Backbone.View.prototype.constructor.apply(this, arguments);
         },
 

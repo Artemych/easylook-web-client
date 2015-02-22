@@ -1,0 +1,83 @@
+{
+  "groups": [
+    {
+      "id": "1",
+      "title": "\u0413\u0440\u0443\u043f\u043f\u0430 1234",
+      "icon": "\/images\/tracker_icons\/ico_track_11.png",
+      "trackers": []
+    },
+    {
+      "id": "2",
+      "title": "\u0413\u0440\u0443\u043f\u043f\u0430 2",
+      "icon": "\/images\/tracker_icons\/ico_track_10.png",
+      "trackers": []
+    },
+    {
+      "id": "4",
+      "title": "\u041d\u043e\u0432\u0430\u044f \u0433\u0440\u0443\u043f\u043f\u0430",
+      "icon": "\/images\/tracker_icons\/ico_track_2.png",
+      "trackers": [
+        {
+          "id": "12",
+          "user": "\u041e\u043b\u0435\u0433 \u0411\u0435\u043b\u043e\u0432",
+          "title": "Personal Phone",
+          "is_on": "1",
+          "icon": "\/images\/tracker_icons\/ico_track_4.png",
+          "imei": "358918051884642",
+          "tariff": "\u0422\u0430\u0440\u0438\u0444 1",
+          "model": "RG 128 Mariner"
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "id": "2",
+      "link": "\/images\/tracker_icons\/ico_track_2.png"
+    },
+    {
+      "id": "3",
+      "link": "\/images\/tracker_icons\/ico_track_3.png"
+    },
+    {
+      "id": "4",
+      "link": "\/images\/tracker_icons\/ico_track_4.png"
+    },
+    {
+      "id": "5",
+      "link": "\/images\/tracker_icons\/ico_track_5.png"
+    },
+    {
+      "id": "6",
+      "link": "\/images\/tracker_icons\/ico_track_6.png"
+    },
+    {
+      "id": "7",
+      "link": "\/images\/tracker_icons\/ico_track_7.png"
+    },
+    {
+      "id": "8",
+      "link": "\/images\/tracker_icons\/ico_track_8.png"
+    },
+    {
+      "id": "9",
+      "link": "\/images\/tracker_icons\/ico_track_9.png"
+    },
+    {
+      "id": "10",
+      "link": "\/images\/tracker_icons\/ico_track_10.png"
+    },
+    {
+      "id": "11",
+      "link": "\/images\/tracker_icons\/ico_track_11.png"
+    },
+    {
+      "id": "13",
+      "link": "\/images\/tracker_icons\/ico_track_13.png"
+    },
+    {
+      "id": "14",
+      "link": "\/images\/tracker_icons\/ico_track_14.png"
+    }
+  ]
+}

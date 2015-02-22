@@ -1,7 +1,7 @@
 define([
     'lib/jquery',
     'lib/handlebars',
-    'app/view/base',
+    'app/view/shared/base',
     'text!app/template/shared/header.html'
 ], function ($, Handlebars, BaseView, headerTemplate) {
     return BaseView.extend({

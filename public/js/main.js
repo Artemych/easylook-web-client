@@ -18,7 +18,20 @@ require.config({
                 'lib/jquery'
             ],
             exports: 'Backbone'
-        }
+        },
+        'lib/backbone-relational': {
+            deps: ['lib/backbone']
+        },
+        'lib/backbone-babysitter': {
+            deps: [
+                'lib/backbone'
+            ]
+        },
+        'lib/backbone-babysitter-propagandist': {
+            deps: [
+                'lib/backbone-babysitter'
+            ]
+        },
     },
     paths: {
         text: 'lib/text'

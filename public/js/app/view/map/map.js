@@ -1,7 +1,7 @@
 define([
     'lib/jquery',
     'lib/handlebars',
-    'app/view/base'
+    'app/view/shared/base'
 ], function ($, Handlebars, BaseView) {
     return BaseView.extend({
         initialize: function () {

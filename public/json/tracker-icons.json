@@ -1,0 +1,52 @@
+{
+  "icons": [
+    {
+      "id": "2",
+      "link": "\/images\/tracker_icons\/ico_track_2.png"
+    },
+    {
+      "id": "3",
+      "link": "\/images\/tracker_icons\/ico_track_3.png"
+    },
+    {
+      "id": "4",
+      "link": "\/images\/tracker_icons\/ico_track_4.png"
+    },
+    {
+      "id": "5",
+      "link": "\/images\/tracker_icons\/ico_track_5.png"
+    },
+    {
+      "id": "6",
+      "link": "\/images\/tracker_icons\/ico_track_6.png"
+    },
+    {
+      "id": "7",
+      "link": "\/images\/tracker_icons\/ico_track_7.png"
+    },
+    {
+      "id": "8",
+      "link": "\/images\/tracker_icons\/ico_track_8.png"
+    },
+    {
+      "id": "9",
+      "link": "\/images\/tracker_icons\/ico_track_9.png"
+    },
+    {
+      "id": "10",
+      "link": "\/images\/tracker_icons\/ico_track_10.png"
+    },
+    {
+      "id": "11",
+      "link": "\/images\/tracker_icons\/ico_track_11.png"
+    },
+    {
+      "id": "13",
+      "link": "\/images\/tracker_icons\/ico_track_13.png"
+    },
+    {
+      "id": "14",
+      "link": "\/images\/tracker_icons\/ico_track_14.png"
+    }
+  ]
+}
