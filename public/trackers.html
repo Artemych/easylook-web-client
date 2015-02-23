@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Трекеры</title>
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,700,400,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href="/css/default2.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/trackers.css" rel="stylesheet" type="text/css"/>
+    <script src="js/lib/require.js"></script>
+    <script>
+        require(['js/main'], function () {
+            require(['main/tracker']);
+        });
+    </script>
+</head>
+<body>
+<div id="content">
+    <div class="main_block">
+        <div class="header"></div>
+        <div class="wrapper-content">
+            <div id="topbar-content">
+                <a href="/about">
+                    <div id="about" class="topbar-link">О проекте</div>
+                </a>
+                <a href="/help">
+                    <div id="help" class="topbar-link">Помощь</div>
+                </a>
+                <a href="/trackers/map">
+                    <div id="map" class="topbar-link">Карта</div>
+                </a>
+                <a href="/shop">
+                    <div id="shop" class="topbar-link active">Магазин</div>
+                </a>
+                <a href="/price">
+                    <div id="price" class="topbar-link">Стоимость</div>
+                </a>
+            </div>
+            <div class="clear"></div>
+            <div class="content-wrapper">
+                <div id="content">
+                    <div id="profile">
+                        <div id="profile_header">
+                            <a class="prof" href="/shop/my/profile/">Мой профиль</a><h1 class="trackers">Трекеры</h1><a href="<?php echo wa()->getRouteUrl('shop/frontent/my')?>" class="order">Мои заказы</a>
+                        </div>
+                        <div id="profile-info"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-helper"></div>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="footer">
+    <div class="footer-wrapper">
+        © 2015 EasyLookPro<i>Все права защищены. Все права на изображения и тексты принадлежат авторам.</i>
+    </div>
+</div>
+</body>
+</html>

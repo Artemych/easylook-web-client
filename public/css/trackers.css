@@ -1,0 +1,375 @@
+@font-face {
+  font-family: "MetaBoldC";
+  src: url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.eot) format('embedded-opentype'), url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.svg) format('svg'), url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.ttf) format('truetype'), url(/fonts/MetaBoldC_latin+latin-ext+cyrillic_gdi.woff) format('woff');
+}
+@font-face {
+  font-family: "Tahoma";
+  src: url(/fonts/tahoma.ttf) format('truetype');
+}
+/* line 7, ../scss/trackers.scss */
+.edit-button, .delete-button {
+  cursor: pointer;
+  position: relative;
+  font-size: 12px;
+  text-decoration: underline;
+  line-height: 16px;
+}
+
+/* line 17, ../scss/trackers.scss */
+.edit-button:before, .delete-button:before {
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 16px;
+  left: -18px;
+  top: 0;
+}
+
+/* line 28, ../scss/trackers.scss */
+.tracker-on, .tracker-off {
+  color: #9A8A7A;
+  cursor: pointer;
+  border-bottom: dotted #9A8A7A 2px;
+}
+
+/* line 35, ../scss/trackers.scss */
+.tracker-button {
+  color: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #cac3bb;
+  box-shadow: 4px 3px #9c8f82;
+}
+/* line 45, ../scss/trackers.scss */
+.tracker-button:hover {
+  color: #e81315;
+  box-shadow: 4px 3px #e81315;
+}
+
+/* line 51, ../scss/trackers.scss */
+.trackers-wrapper {
+  padding-bottom: 20px;
+  min-height: 300px;
+  color: #9c8f82;
+}
+
+/* line 56, ../scss/trackers.scss */
+.group-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 61, ../scss/trackers.scss */
+.group-title:hover {
+  color: #e81315;
+}
+
+/* line 67, ../scss/trackers.scss */
+.edit-button:hover {
+  color: #e81315;
+}
+/* line 70, ../scss/trackers.scss */
+.edit-button:before {
+  background: url("/images/pen-normal-grey.png");
+}
+
+/* line 75, ../scss/trackers.scss */
+.delete-button {
+  margin-left: 25px;
+}
+/* line 78, ../scss/trackers.scss */
+.delete-button:hover {
+  color: #e81315;
+}
+/* line 81, ../scss/trackers.scss */
+.delete-button:before {
+  background: url("/images/cross-normal-grey.png");
+}
+
+/* line 86, ../scss/trackers.scss */
+.tracker-icon {
+  display: inline-block;
+  height: 14px;
+  margin-bottom: -2px;
+  width: 14px;
+}
+
+/* line 92, ../scss/trackers.scss */
+.user-trackers {
+  clear: both;
+  padding-left: 30px;
+}
+
+/* line 96, ../scss/trackers.scss */
+.tracker-group {
+  padding-top: 30px;
+}
+/* line 98, ../scss/trackers.scss */
+.tracker-group .user-trackers {
+  display: none;
+}
+/* line 101, ../scss/trackers.scss */
+.tracker-group.active {
+  color: #000000;
+}
+/* line 103, ../scss/trackers.scss */
+.tracker-group.active .user-trackers {
+  display: block;
+}
+/* line 107, ../scss/trackers.scss */
+.tracker-group.active .tracker-group-header .edit-button:before {
+  background: url("/images/pen-normal.png");
+}
+/* line 110, ../scss/trackers.scss */
+.tracker-group.active .tracker-group-header .delete-button:before {
+  background: url("/images/cross-normal.png");
+}
+/* line 113, ../scss/trackers.scss */
+.tracker-group.active .tracker-group-header .edit-button:hover:before {
+  background: url("/images/pen-hover.png");
+}
+/* line 116, ../scss/trackers.scss */
+.tracker-group.active .tracker-group-header .delete-button:hover:before {
+  background: url("/images/cross-hover.png");
+}
+/* line 121, ../scss/trackers.scss */
+.tracker-group .group-edit-block {
+  display: none;
+}
+/* line 124, ../scss/trackers.scss */
+.tracker-group:first-child {
+  padding: 0;
+}
+
+/* line 128, ../scss/trackers.scss */
+.tracker {
+  padding-top: 20px;
+  color: #9c8f82;
+}
+/* line 131, ../scss/trackers.scss */
+.tracker .tracker-content {
+  display: none;
+}
+/* line 134, ../scss/trackers.scss */
+.tracker.active {
+  color: #000000;
+}
+/* line 136, ../scss/trackers.scss */
+.tracker.active .tracker-content {
+  display: block;
+  margin-top: 15px;
+}
+/* line 141, ../scss/trackers.scss */
+.tracker.active .tracker-header .edit-button:before {
+  background: url("/images/pen-normal.png");
+}
+/* line 144, ../scss/trackers.scss */
+.tracker.active .tracker-header .delete-button:before {
+  background: url("/images/cross-normal.png");
+}
+/* line 147, ../scss/trackers.scss */
+.tracker.active .tracker-header .edit-button:hover:before {
+  background: url("/images/pen-hover.png");
+}
+/* line 150, ../scss/trackers.scss */
+.tracker.active .tracker-header .delete-button:hover:before {
+  background: url("/images/cross-hover.png");
+}
+
+/* line 156, ../scss/trackers.scss */
+.tracker-title {
+  font-size: 14px;
+  line-height: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* line 161, ../scss/trackers.scss */
+.tracker-title:hover {
+  color: #e81315;
+}
+
+/* line 165, ../scss/trackers.scss */
+.tracker-content {
+  background-color: #f1f0ee;
+  margin-left: 18px;
+  padding: 10px;
+  position: relative;
+}
+
+/* line 171, ../scss/trackers.scss */
+.content-group-title {
+  display: inline-block;
+  width: 50%;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* line 177, ../scss/trackers.scss */
+.content-group-value-wrapper {
+  display: inline-block;
+  width: 49%;
+  font-size: 14px;
+}
+
+/* line 182, ../scss/trackers.scss */
+.tracker-content-group {
+  padding: 10px;
+}
+
+/* line 185, ../scss/trackers.scss */
+.content-group-value {
+  position: relative;
+  cursor: pointer;
+}
+/* line 188, ../scss/trackers.scss */
+.content-group-value:hover {
+  color: #e81315;
+}
+/* line 191, ../scss/trackers.scss */
+.content-group-value:after {
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 16px;
+  right: -20px;
+  top: 0;
+  background: url("/images/pen-normal.png");
+}
+/* line 200, ../scss/trackers.scss */
+.content-group-value.no-edit {
+  cursor: default;
+}
+/* line 202, ../scss/trackers.scss */
+.content-group-value.no-edit:after {
+  background: none;
+}
+/* line 205, ../scss/trackers.scss */
+.content-group-value.no-edit:hover {
+  color: #000000;
+}
+/* line 209, ../scss/trackers.scss */
+.content-group-value.icon {
+  height: 14px;
+  width: 14px;
+  display: inline-block;
+}
+
+/* line 215, ../scss/trackers.scss */
+.close-tracker-content {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-decoration: underline;
+}
+/* line 223, ../scss/trackers.scss */
+.close-tracker-content:hover {
+  color: #e81315;
+}
+
+/* line 229, ../scss/trackers.scss */
+.tracker-on:hover {
+  color: #e81315;
+  border-bottom: dotted #e81315 2px;
+}
+/* line 233, ../scss/trackers.scss */
+.tracker-on.active {
+  color: #000000;
+  border-bottom: dotted #000000 2px;
+}
+
+/* line 240, ../scss/trackers.scss */
+.tracker-off:hover {
+  color: #e81315;
+  border-bottom: dotted #e81315 2px;
+}
+/* line 244, ../scss/trackers.scss */
+.tracker-off.active {
+  color: #000000;
+  border-bottom: dotted #000000 2px;
+}
+
+/* line 249, ../scss/trackers.scss */
+.header-left-column {
+  display: inline-block;
+  width: 50%;
+}
+
+/* line 253, ../scss/trackers.scss */
+.header-right-column {
+  display: inline-block;
+  text-align: right;
+  width: 49%;
+}
+
+/* line 258, ../scss/trackers.scss */
+.empty-tracker-view {
+  margin-top: 10px;
+  background-color: #f1f0ee;
+  padding: 15px;
+}
+
+/* line 263, ../scss/trackers.scss */
+.tracker-edit {
+  display: none;
+}
+
+/* line 266, ../scss/trackers.scss */
+.edit-icon {
+  display: inline-block;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background: url("/images/pen-normal.png");
+}
+/* line 272, ../scss/trackers.scss */
+.edit-icon:hover {
+  background: url("/images/pen-hover.png");
+}
+
+/* line 276, ../scss/trackers.scss */
+.tracker-icon-edit {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+/* line 282, ../scss/trackers.scss */
+.tracker-icon-edit.selected:after {
+  content: '';
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 292, ../scss/trackers.scss */
+.group-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+}
+
+/* line 297, ../scss/trackers.scss */
+.edit-button:hover:before {
+  background: url("/images/pen-hover.png");
+}
+
+/* line 300, ../scss/trackers.scss */
+.delete-button:hover:before {
+  background: url("/images/cross-hover.png");
+}
+
+/* line 303, ../scss/trackers.scss */
+.content-group-value:hover:after {
+  background: url("/images/pen-normal.png");
+}

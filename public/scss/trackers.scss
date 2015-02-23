@@ -1,0 +1,305 @@
+@import "compass";
+@import "common";
+
+//@extend-elements
+//original selectors
+//.edit-button, .delete-button
+%extend_1 {
+    cursor: pointer;
+    position: relative;
+    font-size: 12px;
+    text-decoration: underline;
+    line-height: 16px;
+}
+
+//original selectors
+//.edit-button:before, .delete-button:before
+%extend_2 {
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    left: -18px;
+    top: 0;
+}
+
+//original selectors
+//.tracker-on, .tracker-off
+%extend_3 {
+    color: #9A8A7A;
+    cursor: pointer;
+    border-bottom: dotted #9A8A7A 2px;
+}
+
+
+.tracker-button {
+    color: $white;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 5px;
+    margin-right: 10px;
+    background-color: $color_silver_rust_approx;
+    //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 4px 3px $color_pale_oyster_approx;
+    &:hover {
+        color: $color_scarlet_approx;
+        //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        box-shadow: 4px 3px $color_scarlet_approx;
+    }
+}
+.trackers-wrapper {
+    padding-bottom: 20px;
+    min-height: 300px;
+    color: $color_pale_oyster_approx;
+}
+.group-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+        color: $color_scarlet_approx;
+    }
+}
+.edit-button {
+    @extend %extend_1;
+    &:hover {
+        color: $color_scarlet_approx;
+    }
+    &:before {
+        @extend %extend_2;
+        background: $url_18;
+    }
+}
+.delete-button {
+    @extend %extend_1;
+    margin-left: 25px;
+    &:hover {
+        color: $color_scarlet_approx;
+    }
+    &:before {
+        @extend %extend_2;
+        background: $url_19;
+    }
+}
+.tracker-icon {
+    display: inline-block;
+    height: 14px;
+    margin-bottom: -2px;
+    width: 14px;
+}
+.user-trackers {
+    clear: both;
+    padding-left: 30px;
+}
+.tracker-group {
+    padding-top: 30px;
+    .user-trackers {
+        display: none;
+    }
+    &.active {
+        color: $black;
+        .user-trackers {
+            display: block;
+        }
+        .tracker-group-header {
+            .edit-button:before {
+                background: $url_22;
+            }
+            .delete-button:before {
+                background: $url_23;
+            }
+            .edit-button:hover:before {
+                background: $url_20;
+            }
+            .delete-button:hover:before {
+                background: $url_21;
+            }
+        }
+    }
+    .group-edit-block {
+        display: none;
+    }
+    &:first-child {
+        padding: 0;
+    }
+}
+.tracker {
+    padding-top: 20px;
+    color: $color_pale_oyster_approx;
+    .tracker-content {
+        display: none;
+    }
+    &.active {
+        color: $black;
+        .tracker-content {
+            display: block;
+            margin-top: 15px;
+        }
+        .tracker-header {
+            .edit-button:before {
+                background: $url_22;
+            }
+            .delete-button:before {
+                background: $url_23;
+            }
+            .edit-button:hover:before {
+                background: $url_20;
+            }
+            .delete-button:hover:before {
+                background: $url_21;
+            }
+        }
+    }
+}
+.tracker-title {
+    font-size: 14px;
+    line-height: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+        color: $color_scarlet_approx;
+    }
+}
+.tracker-content {
+    background-color: $color_gallery_approx;
+    margin-left: 18px;
+    padding: 10px;
+    position: relative;
+}
+.content-group-title {
+    display: inline-block;
+    width: 50%;
+    font-weight: bold;
+    font-size: 14px;
+}
+.content-group-value-wrapper {
+    display: inline-block;
+    width: 49%;
+    font-size: 14px;
+}
+.tracker-content-group {
+    padding: 10px;
+}
+.content-group-value {
+    position: relative;
+    cursor: pointer;
+    &:hover {
+        color: $color_scarlet_approx;
+    }
+    &:after {
+        position: absolute;
+        content: '';
+        width: 16px;
+        height: 16px;
+        right: -20px;
+        top: 0;
+        background: $url_22;
+    }
+    &.no-edit {
+        cursor: default;
+        &:after {
+            background: none;
+        }
+        &:hover {
+            color: $black;
+        }
+    }
+    &.icon {
+        height: 14px;
+        width: 14px;
+        display: inline-block;
+    }
+}
+.close-tracker-content {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: underline;
+    &:hover {
+        color: $color_scarlet_approx;
+    }
+}
+.tracker-on {
+    @extend %extend_3;
+    &:hover {
+        color: $color_scarlet_approx;
+        border-bottom: dotted $color_scarlet_approx 2px;
+    }
+    &.active {
+        color: $black;
+        border-bottom: dotted $black 2px;
+    }
+}
+.tracker-off {
+    @extend %extend_3;
+    &:hover {
+        color: $color_scarlet_approx;
+        border-bottom: dotted $color_scarlet_approx 2px;
+    }
+    &.active {
+        color: $black;
+        border-bottom: dotted $black 2px;
+    }
+}
+.header-left-column {
+    display: inline-block;
+    width: 50%;
+}
+.header-right-column {
+    display: inline-block;
+    text-align: right;
+    width: 49%;
+}
+.empty-tracker-view {
+    margin-top: 10px;
+    background-color: $color_gallery_approx;
+    padding: 15px;
+}
+.tracker-edit {
+    display: none;
+}
+.edit-icon {
+    display: inline-block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background: $url_22;
+    &:hover {
+        background: $url_20;
+    }
+}
+.tracker-icon-edit {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    &.selected:after {
+        content: '';
+        left: 0;
+        top: 0;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        background-color: $black_20;
+    }
+}
+.group-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+}
+.edit-button:hover:before {
+    background: $url_20;
+}
+.delete-button:hover:before {
+    background: $url_21;
+}
+.content-group-value:hover:after {
+    background: $url_22;
+}

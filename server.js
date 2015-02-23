@@ -8,6 +8,10 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/trackers', function(req, res){
+    res.sendFile(__dirname + '/public/trackers.html');
+});
+
 
 app.get('*', function(req, res){
     res.sendStatus(404);
