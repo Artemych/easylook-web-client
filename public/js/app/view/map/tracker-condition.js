@@ -19,7 +19,6 @@ define([
         changeCurrentTrackerInfo: function () {
             var model = this.viewModel.get('currentTracker');
 
-
             if (model) {
                 this.$el.addClass('active');
                 var trackerData = this.viewModel.get('periodic').getDataByTrackerId(

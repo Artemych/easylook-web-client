@@ -4,6 +4,8 @@ define([
     'app/view/shared/base'
 ], function ($, Handlebars, BaseView) {
     return BaseView.extend({
+        cars: {},
+
         initialize: function () {
             var that = this;
             BaseView.prototype.initialize.apply(that, arguments);
@@ -13,6 +15,7 @@ define([
                     that.viewModel.get('periodic').fetch({
                        success: function() {
                            that.setCurrentTrackerData();
+                           that.updatePlaceMarks();
                            fetchPeriodic();
                        }
                     });
@@ -26,10 +29,17 @@ define([
             });
 
             that.viewModel.set('map', map);
+
+            $.when(that.viewModel.get('promises').periodic).done(function () {
+                that.updatePlaceMarks();
+            });
+
+            that.listenTo(that.viewModel, 'refreshData', that.refreshData);
         },
 
         setCurrentTrackerData: function () {
             var currentTracker = this.viewModel.get('currentTracker');
+            //@todo think about triggering change
             this.viewModel.unset('currentTrackerData');
 
             if (!currentTracker) {
@@ -40,6 +50,66 @@ define([
                 .getDataByTrackerId(currentTracker.get('id'));
 
             this.viewModel.set('currentTrackerData', currentTrackerData);
+        },
+
+        updatePlaceMarks: function () {
+            var that = this,
+                periodicData = that.viewModel.get('periodic'),
+                currentTracker = that.viewModel.get('currentTracker'),
+                map = that.viewModel.get('map');
+
+            _.map(periodicData.models, function (el) {
+                var id = el.get('tracker_id'),
+                    startPoint = el.get('startPoint');
+
+                if (that.cars[id]) {
+                    that.cars[id].geometry.setCoordinates(startPoint);
+                    if (currentTracker && id == currentTracker.get('id')) {
+                        map.setCenter(startPoint);
+                    }
+                } else {
+                    var car = new Car({
+                        hintContent: el.get('title'),
+                        iconLayout: ymaps.templateLayoutFactory.createClass(
+                            '<div class="tracker-icon map-icon" data-id="'+ id +'" style="background-image: url(\'' + el.get('icon') +'\')"></div>'),
+                        coordinates: startPoint,
+                        cursor: "pointer",
+                        iconShape: {
+                            type: 'Circle',
+                            coordinates: [0, 0],
+                            radius: 10
+                        }
+                    });
+
+                    car.events.add('click', function (e) {
+                        e.stopPropagation();
+                        that.viewModel.trigger('clearMapData');
+
+                        map.setCenter(that.cars[id].geometry.getCoordinates());
+                        map.setZoom(14);
+                        var tracker = that.viewModel.get('groups').getTrackerById(id);
+                        that.viewModel.set('currentTracker', tracker);
+                        $('.tracker-icon-compass').removeClass('active');
+                        $('.tracker-icon-compass[data-id=' + id +']').addClass('active');
+                    });
+
+                    map.geoObjects.add(car);
+                    that.cars[id] = car;
+                }
+
+                if (currentTracker && id == currentTracker.get('id')) {
+                    map.setCenter(startPoint);
+                    map.setZoom(14);
+                }
+            });
+        },
+
+        refreshData: function () {
+            var that = this;
+            that.viewModel.get('promises')
+                .fetch({success: function() {
+                    that.updatePlaceMarks();
+                }});
         }
     });
 });

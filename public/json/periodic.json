@@ -11,7 +11,9 @@
     "startPoint": [
       "60.000637",
       "30.25037"
-    ]
+    ],
+    "icon":"\/images\/tracker_icons\/ico_track_7.png",
+    "title":"\u0415\u0433\u043e\u0440"
   },
   {
     "id": "6018",
@@ -25,6 +27,8 @@
     "startPoint": [
       "55.609966",
       "37.729908"
-    ]
+    ],
+    "icon":"\/images\/tracker_icons\/ico_track_7.png",
+    "title":"\u0415\u0433\u043e\u0440"
   }]
 }
