@@ -28,10 +28,6 @@ define([
                     this.listenTo(value, event, callback);
                 });
             }
-        },
-
-        toJSON: function () {
-            return _(Backbone.RelationalModel.prototype.toJSON.apply(this, arguments)).omit('cid', 'lastUpdated');
         }
     });
 });

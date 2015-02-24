@@ -1,0 +1,106 @@
+<div class="tracker-header">
+    <div class="header-left-column">
+        <span class="tracker-icon" style="background: url('{{ icon }}')"></span>
+        <span class="tracker-title">{{ title }}</span>
+    </div>
+    <div class="header-right-column">
+        <span class="edit-button tracker-tool">Изменить</span>
+        <span class="delete-button tracker-tool">Удалить</span>
+    </div>
+</div>
+<div class="tracker-content">
+    <div class="tracker-content-group">
+        <div class="content-group-title">Тип устройства, марка/модель:</div>
+        <div class="content-group-value-wrapper">
+            <span class="content-group-value">{{ model }}</span>
+            <div class="tracker-edit">
+                <select class="tracker-input" data-field="model_id" data-id="{{ id }}">
+                    {{#each models}}
+                        <option value="{{ id }}">
+                            {{ name }}
+                        </option>
+                    {{/each}}
+                </select>
+                <span class="edit-icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="tracker-content-group">
+        <div class="content-group-title">Уникальный идентификатор(IMEI):</div>
+        <div class="content-group-value-wrapper">
+            <span class="content-group-value">{{ imei }}</span>
+            <div class="tracker-edit">
+                <input class="tracker-input" data-field="imei" data-id="{{ id }}" type="text" name="imei" value="{{ imei }}"/>
+                <span class="edit-icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="tracker-content-group">
+        <div class="content-group-title">Включение / выкоючение:</div>
+        <div class="content-group-value-wrapper">
+            <span class="tracker-on {{#if isOn }} active {{/if}}"> Включить </span>&nbsp;&nbsp;
+            <span class="tracker-off {{#if isOff }} active {{/if}}"> Выключить </span>
+        </div>
+    </div>
+    <div class="tracker-content-group">
+        <div class="content-group-title">Название:</div>
+        <div class="content-group-value-wrapper">
+            <span class="content-group-value">{{ title }}</span>
+            <div class="tracker-edit">
+                <input type="text" class="tracker-input" data-field="title" name="title" value="{{ title }}"/>
+                <span class="edit-icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="tracker-content-group">
+        <div class="content-group-title">Иконка:</div>
+        <div class="content-group-value-wrapper">
+            <span class="content-group-value icon" style="background: url('{{ icon }}')"></span>
+            <div class="tracker-edit">
+                {{#each icons}}
+                    <span data-field="icon_id" data-icon-id="{{ id }}" class="tracker-icon-edit tracker-input" style="background: url('{{ link }}')"></span>
+                {{/each}}
+                <span class="edit-icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="tracker-content-group">
+        <div class="content-group-title">Группа:</div>
+        <div class="content-group-value-wrapper">
+            <span class="content-group-value">{{ groupTitle }}</span>
+            <div class="tracker-edit">
+                <select class="tracker-input" data-field="group_id">
+                        {{#each groups}}
+                        <option value="{{ id }}">
+                            {{ title }}
+                        </option>
+                        {{/each}}
+                </select>
+                <span class="edit-icon"></span>
+            </div>
+        </div>
+    </div>
+    <div class="tracker-content-group">
+        <div class="content-group-title">Период сохранения истории:</div>
+        <div class="content-group-value-wrapper">
+            <span class="content-group-value no-edit">05.01.2014-06.01.2014</span>
+        </div>
+    </div>
+    <div class="tracker-content-group">
+        <div class="content-group-title">Тариф:</div>
+        <div class="content-group-value-wrapper">
+            <span class="content-group-value">{{ tariff }}</span>
+            <div class="tracker-edit">
+                <select class="tracker-input" data-field="tariff_id">
+                    {{#each tariffs}}
+                    <option value="{{ id }}">
+                        {{ title }}
+                    </option>
+                    {{/each}}
+                </select>
+                <span class="edit-icon"></span>
+            </div>
+        </div>
+    </div>
+    <span class="close-tracker-content">Закрыть</span>
+</div>

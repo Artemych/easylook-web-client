@@ -9,6 +9,18 @@ define([
 
         parse: function (data) {
             return data.icons;
+        },
+
+        getIdByUrl: function (url) {
+            return this.findWhere({
+                link: url
+            }).get('id');
+        },
+
+        getUrlById: function (id) {
+            return this.findWhere({
+                id: id
+            }).get('link');
         }
     });
 });

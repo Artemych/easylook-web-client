@@ -1,0 +1,27 @@
+<div class="tracker-group-header">
+    <div class="group-inner-block">
+        <div class="header-left-column">
+            <span class="group-icon" style="background: url('{{ icon }}')"></span>
+            <span class="group-title">{{ title }}</span>
+        </div>
+        <div class="header-right-column">
+            <span class="edit-button group">Изменить</span>
+            <span class="delete-button group" data-id="{{ id }}">Удалить</span>
+        </div>
+    </div>
+    <div class="group-edit-block">
+        <div class="header-left-column">
+            <div>
+                {{#each icons}}
+                    <span data-icon-id="{{ id }}" class="tracker-icon-edit" style="background: url('{{ link }}')"></span>
+                {{/each}}
+            </div>
+            <input type="text" name="title" value="{{ title }}"/>
+        </div>
+        <div class="header-right-column">
+            <span class="edit-button group-edit" data-id="{{ id }}">Сохранить</span>
+            <span class="delete-button group-edit">Отмена</span>
+        </div>
+    </div>
+</div>
+<div class="user-trackers children-container"></div>

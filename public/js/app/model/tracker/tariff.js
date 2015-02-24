@@ -4,7 +4,5 @@ define([
     'lib/backbone',
     'app/model/shared/base'
 ], function (_, $, Backbone, Base) {
-    return Base.extend({
-        urlRoot: '/json/tracker.json'
-    });
+    return Base.extend({});
 });
