@@ -24,6 +24,21 @@ define([
             return Backbone.View.prototype.constructor.apply(this, arguments);
         },
 
+        initialize: function() {
+            $(document).ajaxError(function (event, request, ajaxSettings, exception) {
+                // Allow manual abort
+                if (request.statusText === 'abort') {
+                    return;
+                }
+
+                if (request.status == 403) {
+                    return window.location = '/shop/login/';
+                }
+            });
+
+            Backbone.View.initialize.apply(this, arguments);
+        },
+
         renderTo: function ($el, insertionMethod) {
             insertionMethod = insertionMethod || 'append';
 

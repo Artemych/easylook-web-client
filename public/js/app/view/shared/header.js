@@ -9,8 +9,10 @@ define([
         template: Handlebars.compile(headerTemplate),
 
         templateData: function () {
-            //@todo fetch data from server
-            return {username: "test user"};
+            if (window.serverData) {
+                return {username: window.serverData.username };
+            }
+            return {username: "test user" };
         }
     });
 });
