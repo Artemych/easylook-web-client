@@ -3,7 +3,7 @@ define([
     'app/model/tracker/model'
 ], function (Backbone, Model) {
     return Backbone.Collection.extend({
-        url: '/api/models',
+        url: '/trackers/api/models',
 
         model: Model
     });
