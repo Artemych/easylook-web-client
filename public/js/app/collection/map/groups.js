@@ -3,7 +3,7 @@ define([
     'app/model/map/group'
 ], function (Backbone, Group) {
     return Backbone.Collection.extend({
-        url: '/json/map-trackers.json',
+        url: '/api/groups-with-trackers',
 
         model: Group,
 

@@ -6,7 +6,7 @@ define([
     'app/model/map/tracker'
 ], function (_, $, Backbone, Base, Tracker) {
     return Base.extend({
-        urlRoot: '/json/group.json',
+        urlRoot: '/api/group',
 
         relations: [{
             type: Backbone.HasMany,

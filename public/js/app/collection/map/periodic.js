@@ -3,7 +3,7 @@ define([
     'app/model/map/periodic'
 ], function (Backbone, Periodic) {
     return Backbone.Collection.extend({
-        url: '/json/periodic.json',
+        url: '/api/periodic',
         model: Periodic,
         trackerMap: {},
 

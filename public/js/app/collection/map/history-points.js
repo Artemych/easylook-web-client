@@ -3,7 +3,7 @@ define([
     'app/model/map/history-point'
 ], function (Backbone, Point) {
     return Backbone.Collection.extend({
-        url: '/json/history.json',
+        url: '/api/tracker-history',
 
         model: Point
     });
