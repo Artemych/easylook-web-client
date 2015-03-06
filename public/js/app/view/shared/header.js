@@ -10,7 +10,7 @@ define([
 
         templateData: function () {
             if (window.serverData) {
-                return {username: window.serverData.username };
+                return {username: window.serverData.userName };
             }
             return {username: "test user" };
         }
