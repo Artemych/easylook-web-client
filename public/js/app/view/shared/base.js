@@ -35,8 +35,6 @@ define([
                     return window.location = '/shop/login/';
                 }
             });
-
-            Backbone.View.initialize.apply(this, arguments);
         },
 
         renderTo: function ($el, insertionMethod) {
