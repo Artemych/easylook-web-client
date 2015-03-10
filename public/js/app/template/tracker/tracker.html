@@ -14,7 +14,7 @@
         <div class="content-group-value-wrapper">
             <span class="content-group-value">{{ model }}</span>
             <div class="tracker-edit">
-                <select class="tracker-input" data-field="model_id" data-id="{{ id }}">
+                <select class="tracker-input" data-field="modelId" data-id="{{ id }}">
                     {{#each models}}
                         <option value="{{ id }}">
                             {{ name }}
@@ -58,7 +58,7 @@
             <span class="content-group-value icon" style="background: url('{{ icon }}')"></span>
             <div class="tracker-edit">
                 {{#each icons}}
-                    <span data-field="icon_id" data-icon-id="{{ id }}" class="tracker-icon-edit tracker-input" style="background: url('{{ link }}')"></span>
+                    <span data-field="iconId" data-icon-id="{{ id }}" class="tracker-icon-edit tracker-input" style="background: url('{{ link }}')"></span>
                 {{/each}}
                 <span class="edit-icon"></span>
             </div>
@@ -69,7 +69,7 @@
         <div class="content-group-value-wrapper">
             <span class="content-group-value">{{ groupTitle }}</span>
             <div class="tracker-edit">
-                <select class="tracker-input" data-field="group_id">
+                <select class="tracker-input" data-field="groupId">
                         {{#each groups}}
                         <option value="{{ id }}">
                             {{ title }}
@@ -91,7 +91,7 @@
         <div class="content-group-value-wrapper">
             <span class="content-group-value">{{ tariff }}</span>
             <div class="tracker-edit">
-                <select class="tracker-input" data-field="tariff_id">
+                <select class="tracker-input" data-field="tariffId">
                     {{#each tariffs}}
                     <option value="{{ id }}">
                         {{ title }}

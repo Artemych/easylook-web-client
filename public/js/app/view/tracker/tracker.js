@@ -24,13 +24,13 @@ define([
             var data = BaseView.prototype.templateData.apply(this, arguments);
 
             return _.extend(data, {
-                groupTitle: this.model.get('group').get('title'),
+                groupTitle: this.model.get('group'),
                 icons: this.viewModel.get('icons').toJSON(),
                 tariffs: this.viewModel.get('tariffs').toJSON(),
                 groups: this.viewModel.get('groups').toJSON(),
                 models: this.viewModel.get('models').toJSON(),
-                isOn: this.model.get('is_on') == 1,
-                isOff: this.model.get('is_on') != 1
+                isOn: this.model.get('on') == 1,
+                isOff: this.model.get('on') != 1
             });
         },
 
