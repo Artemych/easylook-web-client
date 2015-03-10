@@ -63,8 +63,8 @@ define([
                 var id = el.get('trackerId'),
                     startPoint = [el.get('lat'), el.get('lng')];
 
-                if (that.cars[id]) {
-                    that.cars[id].geometry.setCoordinates(startPoint);
+                if (that.viewModel.get('cars')[id]) {
+                    that.viewModel.get('cars')[id].geometry.setCoordinates(startPoint);
                     if (currentTracker && id == currentTracker.get('id')) {
                         if (!that.viewModel.get('currentRoute')) {
                             map.setCenter(startPoint);
@@ -98,15 +98,13 @@ define([
                     });
 
                     map.geoObjects.add(car);
-                    that.cars[id] = car;
+                    that.viewModel.get('cars')[id] = car;
                 }
 
                 if (currentTracker && id == currentTracker.get('id')) {
                     map.setCenter(startPoint);
                     map.setZoom(14);
                 }
-
-                that.viewModel.set('cars', that.cars);
             });
         },
 
