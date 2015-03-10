@@ -36,18 +36,17 @@ define([
             group.save({}, {
                 success: function () {
                     console.log('success');
+                    that.viewModel.get('groups').add(group);
                 },
                 error: function () {
                     console.log('error');
                 }
             });
-
-            //@todo move it
-            that.viewModel.get('groups').add(group);
         },
 
         addTracker: function () {
-            var currentGroup = this.viewModel.get('currentGroup');
+            var that = this,
+                currentGroup = this.viewModel.get('currentGroup');
 
             if (!currentGroup) {
                 alert('Сначала выберете группу');
@@ -63,13 +62,22 @@ define([
 
             var tracker = new Tracker({
                 group: currentGroup,
+                title: "Новый трекер",
+                icon: that.viewModel.get('icons').at(0).get('link'),
+                tariff: that.viewModel.get('tariffs').at(0).get('id'),
                 imei: imei,
                 groupId: currentGroup.get('id')
             });
 
-            tracker.save();
-
-            currentGroup.get('trackers').add(tracker);
+            tracker.save({}, {
+                success: function () {
+                    console.log('success');
+                    currentGroup.get('trackers').add(tracker);
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });
         }
     });
 });
