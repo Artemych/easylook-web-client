@@ -22,6 +22,15 @@ define([
 
         templateData: function () {
             var data = BaseView.prototype.templateData.apply(this, arguments);
+            var model = this.viewModel.get('models').getById(this.model.get('modelId'));
+
+            if (!model) {
+                model = this.viewModel.get('models').at(0).get('name');
+            } else {
+                model = model.get('name');
+            }
+
+            data.model = model;
 
             return _.extend(data, {
                 groupTitle: this.model.get('trackerGroup').get('title'),
@@ -30,7 +39,7 @@ define([
                 groups: this.viewModel.get('groups').toJSON(),
                 models: this.viewModel.get('models').toJSON(),
                 isOn: this.model.get('on') == 1,
-                isOff: this.model.get('on') != 1
+                isOff: this.model.get('on') != 1,
             });
         },
 
@@ -53,7 +62,7 @@ define([
         trackerOn: function () {
             var that = this;
             that.model.save({
-                is_on: true,
+                on: true,
                 success: function () {
                     that.render();
                 }
@@ -63,7 +72,7 @@ define([
         trackerOff: function () {
             var that = this;
             that.model.save({
-                is_on: false
+                on: false
             }, {
                 success: function () {
                     that.render();

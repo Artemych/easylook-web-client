@@ -5,6 +5,12 @@ define([
     return Backbone.Collection.extend({
         url: '/trackers/api/models',
 
-        model: Model
+        model: Model,
+
+        getById: function(id) {
+            return this.findWhere({
+                id: id
+            });
+        }
     });
 });
