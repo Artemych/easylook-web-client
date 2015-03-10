@@ -40,7 +40,7 @@ define([
             this.$('.tracker-info-lng').html(currentTrackerData.get('lng'));
             this.$('.tracker-info-speed').html(currentTrackerData.get('speed'));
 
-            var startDate = this.getDateObject(currentTrackerData.get('log_date') * 1000);
+            var startDate = this.getDateObject(currentTrackerData.get('logDate') * 1000);
             this.$('.tracker-info-last-date').html(startDate.hours + ':' + startDate.min);
         }
     });

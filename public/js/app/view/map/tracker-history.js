@@ -38,7 +38,7 @@ define([
                 return;
             }
 
-            var startDate = this.getDateObject(currentTrackerData.get('log_date') * 1000);
+            var startDate = this.getDateObject(currentTrackerData.get('logDate') * 1000);
             this.updatePeriod(this.$('.period-row.to'), startDate);
         },
 
