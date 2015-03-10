@@ -103,6 +103,7 @@ define([
                 function (route) {
                     that.clearMapData();
                     that.currentRoute = route;
+                    that.viewModel.set('currentRoute', route);
                     map.geoObjects.add(route);
 
                     var car = that.viewModel.get('cars')[that.viewModel.get('currentTracker').get('id')];
@@ -168,6 +169,7 @@ define([
             console.log('clear map data');
             var map = this.viewModel.get('map');
             map.geoObjects.remove(this.currentRoute);
+            that.viewModel.unset('currentRoute');
             clearInterval(this.currentMapTimer);
         }
     });

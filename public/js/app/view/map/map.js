@@ -63,10 +63,12 @@ define([
                 var id = el.get('trackerId'),
                     startPoint = [el.get('lat'), el.get('lng')];
 
-                if (that.viewModel.get('cars')[id]) {
-                    that.viewModel.get('cars')[id].geometry.setCoordinates(startPoint);
+                if (that.cars[id]) {
+                    that.cars[id].geometry.setCoordinates(startPoint);
                     if (currentTracker && id == currentTracker.get('id')) {
-                        map.setCenter(startPoint);
+                        if (!that.viewModel.get('currentRoute')) {
+                            map.setCenter(startPoint);
+                        }
                     }
                 } else {
                     var icon = that.viewModel.get('groups').getIconByTrackerId(id);
@@ -96,13 +98,15 @@ define([
                     });
 
                     map.geoObjects.add(car);
-                    that.viewModel.get('cars')[id] = car;
+                    that.cars[id] = car;
                 }
 
                 if (currentTracker && id == currentTracker.get('id')) {
                     map.setCenter(startPoint);
                     map.setZoom(14);
                 }
+
+                that.viewModel.set('cars', that.cars);
             });
         },
 
