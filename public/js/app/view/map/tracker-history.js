@@ -99,7 +99,7 @@ define([
 
             tmproute.push(data.at(0).get('point'));
 
-            ymaps.route(tmproute).then(
+            ymaps.route(tmproute.reverse()).then(
                 function (route) {
                     that.clearMapData();
                     that.currentRoute = route;
