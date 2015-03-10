@@ -64,8 +64,8 @@ define([
 
             historyPoints.fetch({
                 data: {
-                    endDate: timeStamps.toDate,
-                    startDate: timeStamps.fromDate,
+                    toDate: timeStamps.toDate,
+                    fromDate: timeStamps.fromDate,
                     trackerId: currentTracker.get('id')
                 },
                 success: that.handleSuccess
