@@ -27,7 +27,7 @@ define([
             }
 
             return this.findWhere({
-                id: id
+                id: parseInt(id)
             }).get('link');
         }
     });
