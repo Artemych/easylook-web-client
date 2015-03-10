@@ -70,7 +70,7 @@ define([
                 iconId: iconId,
                 icon: iconUrl
             }, {
-                patch: true,
+                patch: false,
                 wait: true,
                 success: function () {
                     that.render();
