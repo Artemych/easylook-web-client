@@ -59,8 +59,8 @@ define([
                 map = that.viewModel.get('map');
 
             _.map(periodicData.models, function (el) {
-                var id = el.get('tracker_id'),
-                    startPoint = el.get('startPoint');
+                var id = el.get('trackerId'),
+                    startPoint = [el.get('lat'), el.get('lng')];
 
                 if (that.cars[id]) {
                     that.cars[id].geometry.setCoordinates(startPoint);
@@ -68,10 +68,11 @@ define([
                         map.setCenter(startPoint);
                     }
                 } else {
+                    var icon = that.viewModel.get('groups').getIconByTrackerId(id);
                     var car = new Car({
                         hintContent: el.get('title'),
                         iconLayout: ymaps.templateLayoutFactory.createClass(
-                            '<div class="tracker-icon map-icon" data-id="'+ id +'" style="background-image: url(\'' + el.get('icon') +'\')"></div>'),
+                            '<div class="tracker-icon map-icon" data-id="'+ id +'" style="background-image: url(\'' + icon +'\')"></div>'),
                         coordinates: startPoint,
                         cursor: "pointer",
                         iconShape: {

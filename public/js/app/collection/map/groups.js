@@ -24,6 +24,12 @@ define([
             });
 
             return tracker;
+        },
+
+        getIconByTrackerId: function(trackerId) {
+            var tracker = this.getTrackerById(trackerId);
+
+            return tracker.get('icon');
         }
     });
 });
