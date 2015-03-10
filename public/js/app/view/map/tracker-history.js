@@ -104,6 +104,7 @@ define([
                 function (route) {
                     that.clearMapData();
                     that.currentRoute = route;
+                    that.viewModel.set('currentRoute', route);
                     map.geoObjects.add(route);
 
                     if (car) {
@@ -168,6 +169,7 @@ define([
             console.log('clear map data');
             var map = this.viewModel.get('map');
             map.geoObjects.remove(this.currentRoute);
+            this.viewModel.unset('currentRoute');
             clearInterval(this.currentMapTimer);
         }
     });
