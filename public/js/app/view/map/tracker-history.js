@@ -68,11 +68,13 @@ define([
                     fromDate: timeStamps.fromDate,
                     trackerId: currentTracker.get('id')
                 },
-                success: that.handleSuccess
+                success: function (data) {
+                    that.handleSuccess(data, that);
+                }
             });
         },
 
-        handleSuccess: function(data) {
+        handleSuccess: function(data, context) {
             if (data.length < 0) {
                 return;
             }
@@ -83,8 +85,8 @@ define([
             }
 
             var tmproute = [],
-                that = this,
-                map = this.viewModel.get('map');
+                that = context,
+                map = that.viewModel.get('map');
 
             tmproute.push(data.at(data.length - 1).get('values'));
 
