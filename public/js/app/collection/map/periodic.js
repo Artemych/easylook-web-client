@@ -13,7 +13,7 @@ define([
             Backbone.Collection.prototype.set.apply(that, [models, options]);
 
             _.each(that.models, function (item) {
-                that.trackerMap[item.get('tracker_id')] = item;
+                that.trackerMap[item.get('trackerId')] = item;
             });
         },
 
