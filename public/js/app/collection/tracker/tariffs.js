@@ -5,6 +5,10 @@ define([
     return Backbone.Collection.extend({
         url: '/api/tariffs',
 
-        model: Tariff
+        model: Tariff,
+
+        parse: function(data) {
+            return data.tariffs;
+        }
     });
 });

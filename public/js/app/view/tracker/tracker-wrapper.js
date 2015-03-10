@@ -63,8 +63,9 @@ define([
             var tracker = new Tracker({
                 group: currentGroup,
                 title: "Новый трекер",
-                icon: that.viewModel.get('icons').at(0).get('link'),
-                tariff: that.viewModel.get('tariffs').at(0).get('id'),
+                modelId: that.viewModel.get('models').at(0).get('id'),
+                iconId: that.viewModel.get('icons').at(0).get('id'),
+                tariffId: that.viewModel.get('tariffs').at(0).get('id'),
                 imei: imei,
                 groupId: currentGroup.get('id')
             });

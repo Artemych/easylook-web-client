@@ -13,7 +13,7 @@ define([
             key: 'trackers',
             relatedModel: Tracker,
             reverseRelation: {
-                key: 'group'
+                key: 'trackerGroup'
             }
         }]
     });

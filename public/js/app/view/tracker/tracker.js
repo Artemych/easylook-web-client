@@ -24,7 +24,7 @@ define([
             var data = BaseView.prototype.templateData.apply(this, arguments);
 
             return _.extend(data, {
-                groupTitle: this.model.get('group'),
+                groupTitle: this.model.get('trackerGroup').get('title'),
                 icons: this.viewModel.get('icons').toJSON(),
                 tariffs: this.viewModel.get('tariffs').toJSON(),
                 groups: this.viewModel.get('groups').toJSON(),
