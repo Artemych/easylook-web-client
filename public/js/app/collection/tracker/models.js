@@ -9,7 +9,7 @@ define([
 
         getById: function(id) {
             return this.findWhere({
-                id: id
+                id: id.toString()
             });
         }
     });

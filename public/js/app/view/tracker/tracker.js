@@ -38,8 +38,8 @@ define([
                 tariffs: this.viewModel.get('tariffs').toJSON(),
                 groups: this.viewModel.get('groups').toJSON(),
                 models: this.viewModel.get('models').toJSON(),
-                isOn: this.model.get('on') == 1,
-                isOff: this.model.get('on') != 1,
+                isOn: this.model.get('on') == true,
+                isOff: this.model.get('on') != true
             });
         },
 
@@ -83,7 +83,7 @@ define([
         editTracker: function (e) {
             var $parent = $(e.target).parent().parent(),
                 field = null,
-                that = this;
+                that = this,
                 value = null;
             $parent.find('.content-group-value').show();
             $parent.find('.tracker-edit').hide();
