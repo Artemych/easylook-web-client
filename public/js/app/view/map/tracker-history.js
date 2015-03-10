@@ -88,16 +88,16 @@ define([
                 that = context,
                 map = that.viewModel.get('map');
 
-            tmproute.push(data.at(data.length - 1).get('values'));
+            tmproute.push(data.at(data.length - 1).get('point'));
 
             for(var i = data.length - 2; i > 0; i--) {
                 tmproute.push({
                     type: 'viaPoint',
-                    point: data.at(i).get('values')
+                    point: data.at(i).get('point')
                 });
             }
 
-            tmproute.push(data.at(0).get('values'));
+            tmproute.push(data.at(0).get('point'));
 
             ymaps.route(tmproute).then(
                 function (route) {
