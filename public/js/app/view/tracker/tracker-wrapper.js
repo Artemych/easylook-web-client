@@ -66,6 +66,7 @@ define([
                 modelId: that.viewModel.get('models').at(0).get('id'),
                 iconId: that.viewModel.get('icons').at(0).get('id'),
                 tariffId: that.viewModel.get('tariffs').at(0).get('id'),
+                trackerGroup: currentGroup,
                 imei: imei,
                 groupId: currentGroup.get('id')
             });
