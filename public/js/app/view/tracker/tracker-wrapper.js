@@ -54,8 +54,16 @@ define([
                 return;
             }
 
+            var imei = prompt("Введите imei");
+
+            if (!imei) {
+                alert('Imei обязателен');
+                return;
+            }
+
             var tracker = new Tracker({
                 group: currentGroup,
+                imei: imei,
                 groupId: currentGroup.get('id')
             });
 
