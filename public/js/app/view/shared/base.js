@@ -72,6 +72,15 @@ define([
             return Backbone.View.prototype.remove.apply(this, arguments);
         },
 
+        removeChildren: function () {
+            this.childViews.each(function (childView) {
+                childView.remove();
+            });
+
+            this.childViews = new Backbone.TattletaleContainer();
+        },
+
+
         registerPartial: function (name, template) {
             if (!(name in Handlebars.partials)) {
                 Handlebars.registerPartial(name, template);
