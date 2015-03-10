@@ -29,6 +29,7 @@ define([
             });
 
             that.viewModel.set('map', map);
+            that.viewModel.set('cars', {});
 
             $.when(that.viewModel.get('promises').periodic).done(function () {
                 that.updatePlaceMarks();
@@ -62,8 +63,8 @@ define([
                 var id = el.get('trackerId'),
                     startPoint = [el.get('lat'), el.get('lng')];
 
-                if (that.cars[id]) {
-                    that.cars[id].geometry.setCoordinates(startPoint);
+                if (that.viewModel.get('cars')[id]) {
+                    that.viewModel.get('cars')[id].geometry.setCoordinates(startPoint);
                     if (currentTracker && id == currentTracker.get('id')) {
                         map.setCenter(startPoint);
                     }
@@ -95,7 +96,7 @@ define([
                     });
 
                     map.geoObjects.add(car);
-                    that.cars[id] = car;
+                    that.viewModel.get('cars')[id] = car;
                 }
 
                 if (currentTracker && id == currentTracker.get('id')) {

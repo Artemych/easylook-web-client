@@ -105,7 +105,7 @@ define([
                     that.currentRoute = route;
                     map.geoObjects.add(route);
 
-                    var car = cars[currentTrackerId];
+                    var car = that.viewModel.get('cars')[that.viewModel.get('currentTracker').get('id')];
                     if (car) {
                         that.currentMapTimer = car.moveTo(route.getPaths().get(0).getSegments(), {
                             speed: 10,
