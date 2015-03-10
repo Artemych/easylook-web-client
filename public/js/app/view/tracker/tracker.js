@@ -74,6 +74,7 @@ define([
         editTracker: function (e) {
             var $parent = $(e.target).parent().parent(),
                 field = null,
+                that = this;
                 value = null;
             $parent.find('.content-group-value').show();
             $parent.find('.tracker-edit').hide();
@@ -99,7 +100,14 @@ define([
 
                 data[field] = value;
 
-                this.model.save(data);
+                this.model.save(data, {
+                    success: function () {
+                        that.render();
+                    },
+                    error: function () {
+                        console.log('error');
+                    }
+                });
             }
         },
 
