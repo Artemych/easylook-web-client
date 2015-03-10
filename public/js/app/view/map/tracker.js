@@ -34,7 +34,7 @@ define([
                 this.viewModel.unset('currentTracker');
             } else {
                 $clickedEl.addClass('active');
-                map.setCenter(periodicData.get('startPoint'));
+                map.setCenter([periodicData.get('lat'), periodicData.get('lng')]);
                 map.setZoom(14);
                 this.viewModel.set('currentTracker', this.model);
             }
