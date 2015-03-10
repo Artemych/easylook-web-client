@@ -11,7 +11,7 @@ define([
         events: {
             'click .tracker-title': 'showTrackerInfo',
             'click .edit-button.tracker-tool': 'showTrackerInfo',
-            'click .delete-button tracker-tool': 'removeModel',
+            'click .delete-button.tracker-tool': 'removeModel',
             'click .close-tracker-content': 'close',
             'click .tracker-on': 'trackerOn',
             'click .tracker-off': 'trackerOff',
