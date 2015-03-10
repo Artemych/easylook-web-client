@@ -98,6 +98,7 @@ define([
             }
 
             tmproute.push(data.at(0).get('point'));
+            var car = that.viewModel.get('cars')[that.viewModel.get('currentTracker').get('id')];
 
             ymaps.route(tmproute.reverse()).then(
                 function (route) {
@@ -106,7 +107,6 @@ define([
                     that.viewModel.set('currentRoute', route);
                     map.geoObjects.add(route);
 
-                    var car = that.viewModel.get('cars')[that.viewModel.get('currentTracker').get('id')];
                     if (car) {
                         that.currentMapTimer = car.moveTo(route.getPaths().get(0).getSegments(), {
                             speed: 10,
