@@ -5,6 +5,10 @@ define([
     return Backbone.Collection.extend({
         url: '/api/tracker-history',
 
-        model: Point
+        model: Point,
+
+        parse: function (data) {
+            return data.history;
+        }
     });
 });
